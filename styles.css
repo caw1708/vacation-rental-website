@@ -98,30 +98,211 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: #2c3e50;
+    font-size: 2.5rem;
 }
 
-.gallery-grid {
+/* Main Image */
+.main-image-container {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 4rem;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.main-image-container:hover img {
+    transform: scale(1.02);
+}
+
+/* Floor Selection */
+.floor-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.floor-card {
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.floor-card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.floor-card i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.floor-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.floor-card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Featured Gallery */
+.featured-gallery {
+    margin-bottom: 4rem;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.featured-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.featured-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Floor-based Gallery */
+.floor-galleries {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.floor-section {
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.floor-title {
+    padding: 1.5rem;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.floor-title:hover {
+    background: #34495e;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.floor-content {
+    display: none;
+    padding: 2rem;
+}
+
+.floor-content.active {
+    display: block;
+}
+
+.room-category {
+    margin-bottom: 2rem;
+}
+
+.room-category h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.room-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 1rem;
 }
 
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item img {
+.room-gallery img {
     width: 100%;
-    height: 300px;
+    height: 200px;
     object-fit: cover;
+    border-radius: 8px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.gallery-item:hover img {
+.room-gallery img:hover {
     transform: scale(1.05);
+}
+
+/* Modal for Image Preview */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
 /* Details Section */
@@ -303,8 +484,26 @@ footer {
         font-size: 1rem;
     }
 
-    .gallery-grid {
-        grid-template-columns: 1fr;
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-image-container {
+        height: 300px;
+        margin-bottom: 3rem;
+    }
+
+    .floor-selection {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .floor-card-content {
+        padding: 1.5rem;
+    }
+
+    .room-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .details-content,
@@ -326,5 +525,26 @@ footer {
     .details-content,
     .amenities-grid {
         grid-template-columns: 1fr;
+    }
+
+    .floor-content {
+        padding: 1rem;
+    }
+
+    .room-gallery img {
+        height: 150px;
+    }
+
+    .gallery h2 {
+        font-size: 2rem;
+    }
+
+    .main-image-container {
+        height: 200px;
+        margin-bottom: 2rem;
+    }
+
+    .floor-card-content {
+        padding: 1rem;
     }
 } 

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Floor - Summer Luxury Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="floor-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Summer Luxury Rental</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="floor-page">
+        <header class="floor-header">
+            <h1>Ground Floor</h1>
+            <p>Explore the main living areas and spaces</p>
+        </header>
+
+        <div class="room-selection">
+            <div class="room-card" onclick="showGallery('living')">
+                <img src="images/ground/living.jpg" alt="Living Room">
+                <div class="room-info">
+                    <h3>Living Room</h3>
+                    <p>Spacious living area with comfortable seating</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('kitchen')">
+                <img src="images/ground/kitchen.jpg" alt="Kitchen">
+                <div class="room-info">
+                    <h3>Kitchen</h3>
+                    <p>Fully equipped modern kitchen</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('dining')">
+                <img src="images/ground/dining.jpg" alt="Dining Room">
+                <div class="room-info">
+                    <h3>Dining Room</h3>
+                    <p>Elegant dining area</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('bedroom')">
+                <img src="images/ground/bedroom1.jpg" alt="Ground Floor Bedroom">
+                <div class="room-info">
+                    <h3>Bedroom</h3>
+                    <p>Comfortable ground floor bedroom</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('bathroom')">
+                <img src="images/ground/bathroom.jpg" alt="Ground Floor Bathroom">
+                <div class="room-info">
+                    <h3>Bathroom</h3>
+                    <p>Modern bathroom facilities</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('other')">
+                <img src="images/ground/other/1.jpg" alt="Additional Views">
+                <div class="room-info">
+                    <h3>Additional Views</h3>
+                    <p>More photos of the ground floor</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <h2 id="gallery-title"></h2>
+                <div class="gallery-grid" id="gallery-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="floor-script.js"></script>
+</body>
+</html> 
