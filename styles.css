@@ -55,7 +55,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+                url('images/main/main.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -139,12 +139,12 @@ body {
 .floor-card {
     text-decoration: none;
     color: inherit;
-    background: white;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e1e1e1;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
     position: relative;
     min-height: 250px;
     display: flex;
@@ -154,26 +154,31 @@ body {
 
 .floor-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
     border-color: #3498db;
+    background: linear-gradient(145deg, #ffffff 0%, #e8f4fc 100%);
 }
 
 .floor-card-content {
-    padding: 2rem;
+    padding: 2.5rem;
     text-align: center;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .floor-card i {
     font-size: 3.5rem;
-    color: #3498db;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
-    display: block; /* Ensure icon is always visible */
+    display: block;
 }
 
 .floor-card:hover i {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg);
 }
 
 .floor-card h3 {
@@ -181,6 +186,21 @@ body {
     color: #2c3e50;
     margin-bottom: 1rem;
     font-weight: 600;
+    position: relative;
+}
+
+.floor-card h3:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    margin: 0.5rem auto;
+    transition: width 0.3s ease;
+}
+
+.floor-card:hover h3:after {
+    width: 100px;
 }
 
 .floor-card p {
@@ -526,7 +546,7 @@ footer {
     }
 
     .floor-card-content {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 
     .floor-card i {
@@ -577,7 +597,7 @@ footer {
     }
 
     .floor-card-content {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .floor-card i {
