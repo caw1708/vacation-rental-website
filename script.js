@@ -22,35 +22,35 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                checkIn: document.getElementById('check-in').value,
-                checkOut: document.getElementById('check-out').value,
-                message: document.getElementById('message').value
-            };
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const checkIn = document.getElementById('check-in').value;
+            const checkOut = document.getElementById('check-out').value;
+            const message = document.getElementById('message').value;
 
-            // Here you would typically send this to your server
-            // For now, we'll just create a formatted email body
+            // Format the email body
             const emailBody = `
-                New Booking Inquiry:
-                
-                Name: ${formData.name}
-                Email: ${formData.email}
-                Phone: ${formData.phone}
-                Check-in Date: ${formData.checkIn}
-                Check-out Date: ${formData.checkOut}
-                Message: ${formData.message}
-            `;
+New Booking Inquiry
 
-            // Create mailto link with multiple recipients
-            const mailtoLink = `mailto:ariane.dresp@freent.de,weberjoachim@me.com,constiweber@icloud.com?subject=New Booking Inquiry&body=${encodeURIComponent(emailBody)}`;
-            
-            // Open email client
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Check-in Date: ${checkIn}
+Check-out Date: ${checkOut}
+
+Message:
+${message}`;
+
+            // Create mailto link with all recipients
+            const recipients = 'ariane.dresp@freent.de,weberjoachim@me.com,constiweber@icloud.com';
+            const subject = 'New Vacation Home Booking Inquiry';
+            const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open the user's email client
             window.location.href = mailtoLink;
 
-            // Clear form
+            // Clear the form
             form.reset();
         });
     }
