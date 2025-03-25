@@ -90,8 +90,10 @@ body {
 
 /* Gallery Section */
 .gallery {
-    padding: 5rem 5%;
+    padding: 5rem 5% 2rem;
     background-color: #f9f9f9;
+    min-height: 100vh;
+    margin-top: 60px; /* Account for fixed navbar */
 }
 
 .gallery h2 {
@@ -99,13 +101,15 @@ body {
     margin-bottom: 3rem;
     color: #2c3e50;
     font-size: 2.5rem;
+    padding-top: 2rem;
 }
 
 /* Main Image */
 .main-image-container {
     width: 100%;
+    max-width: 1200px;
     height: 500px;
-    margin-bottom: 4rem;
+    margin: 0 auto 4rem;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -142,7 +146,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e1e1e1;
     position: relative;
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,6 +169,7 @@ body {
     color: #3498db;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
+    display: block; /* Ensure icon is always visible */
 }
 
 .floor-card:hover i {
@@ -517,7 +522,7 @@ footer {
     }
 
     .floor-card {
-        min-height: 180px;
+        min-height: 220px;
     }
 
     .floor-card-content {
@@ -539,6 +544,11 @@ footer {
     .details-content,
     .amenities-grid {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery {
+        padding: 4rem 3% 1rem;
+        margin-top: 50px;
     }
 }
 
@@ -563,7 +573,7 @@ footer {
     }
 
     .floor-card {
-        min-height: 160px;
+        min-height: 200px;
     }
 
     .floor-card-content {
@@ -585,6 +595,10 @@ footer {
 
     .room-gallery img {
         height: 150px;
+    }
+
+    .gallery {
+        padding: 3rem 2% 1rem;
     }
 
     .gallery h2 {
