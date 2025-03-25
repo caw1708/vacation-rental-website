@@ -38,6 +38,9 @@ function showGallery(roomType) {
         'bedroom': 'Bedroom Gallery',
         'bathroom': 'Bathroom Gallery',
         'laundry': 'Laundry Room Gallery',
+        'living': 'Living Room Gallery',
+        'kitchen': 'Kitchen Gallery',
+        'dining': 'Dining Room Gallery',
         'other': 'Additional Views'
     };
     galleryTitle.textContent = titles[roomType];
@@ -45,16 +48,107 @@ function showGallery(roomType) {
     // Get current floor from URL
     const floor = window.location.pathname.split('/').pop().replace('.html', '');
     
-    // Load images for the selected room
-    // In a real implementation, you would load these dynamically from the server
-    // For now, we'll assume a fixed number of images per room
-    const imagePath = `images/${floor}/${roomType === 'other' ? 'other/' : ''}`;
-    const numberOfImages = roomType === 'other' ? 5 : 3; // Adjust based on actual number of images
+    // Define image paths based on floor and room type
+    let imagePaths = [];
+    const basePath = `images/${floor}/`;
 
-    for (let i = 1; i <= numberOfImages; i++) {
+    switch(floor) {
+        case 'ground':
+            switch(roomType) {
+                case 'living':
+                    imagePaths = [
+                        'ground living.jpg',
+                        'ground living (1).jpg',
+                        'ground living (2).jpg'
+                    ];
+                    break;
+                case 'kitchen':
+                    imagePaths = ['ground kitchen.jpg'];
+                    break;
+                case 'dining':
+                    imagePaths = [
+                        'ground dinning.jpg',
+                        'Ground dinning (1).jpg',
+                        'Ground dining(2).jpg'
+                    ];
+                    break;
+                case 'bedroom':
+                    imagePaths = ['ground room1.jpg'];
+                    break;
+                case 'bathroom':
+                    imagePaths = ['ground bathroom.jpg'];
+                    break;
+                case 'other':
+                    imagePaths = ['ground(5).jpg'];
+                    break;
+            }
+            break;
+        case 'first':
+            switch(roomType) {
+                case 'bedroom':
+                    imagePaths = [
+                        'first room1.jpg',
+                        'first room2.jpg',
+                        'first room3.jpg',
+                        'first room4.jpg',
+                        'first room5.jpg'
+                    ];
+                    break;
+                case 'bathroom':
+                    imagePaths = [
+                        'first bathroom.jpg',
+                        'first bathroom (1).jpg',
+                        'first bathroom (2).jpg'
+                    ];
+                    break;
+                case 'other':
+                    imagePaths = ['first room1().jpg'];
+                    break;
+            }
+            break;
+        case 'second':
+            switch(roomType) {
+                case 'bedroom':
+                    imagePaths = [
+                        'second bedroom1.jpg',
+                        'second bedroom2.jpg'
+                    ];
+                    break;
+                case 'bathroom':
+                    imagePaths = [
+                        'second bathroom.jpg',
+                        'second bathroom(1).jpg'
+                    ];
+                    break;
+                case 'other':
+                    imagePaths = ['second bedroom1(1).jpg'];
+                    break;
+            }
+            break;
+        case 'basement':
+            switch(roomType) {
+                case 'bedroom':
+                    imagePaths = [
+                        'basement room.jpg',
+                        'basement room(1).jpg',
+                        'basement room().jpg'
+                    ];
+                    break;
+                case 'bathroom':
+                    imagePaths = ['basement bathroom.jpg'];
+                    break;
+                case 'other':
+                    imagePaths = ['basement room(1).jpg'];
+                    break;
+            }
+            break;
+    }
+
+    // Load images
+    imagePaths.forEach(path => {
         const img = document.createElement('img');
-        img.src = `${imagePath}${roomType === 'other' ? i : roomType + i}.jpg`;
-        img.alt = `${titles[roomType]} - Image ${i}`;
+        img.src = basePath + path;
+        img.alt = `${titles[roomType]} - ${path}`;
         
         // Add click handler for full-screen view
         img.addEventListener('click', function() {
@@ -62,7 +156,7 @@ function showGallery(roomType) {
         });
         
         galleryGrid.appendChild(img);
-    }
+    });
 
     // Show modal
     modal.classList.add('active');
