@@ -35,9 +35,12 @@ function showGallery(roomType) {
 
     // Set gallery title
     const titles = {
-        'bedroom': 'Bedroom Gallery',
+        'bedroom1': 'First Bedroom Gallery',
+        'bedroom2': 'Second Bedroom Gallery',
+        'bedroom3': 'Third Bedroom Gallery',
+        'bedroom4': 'Fourth Bedroom Gallery',
+        'bedroom5': 'Fifth Bedroom Gallery',
         'bathroom': 'Bathroom Gallery',
-        'laundry': 'Laundry Room Gallery',
         'living': 'Living Room Gallery',
         'kitchen': 'Kitchen Gallery',
         'dining': 'Dining Room Gallery',
@@ -85,13 +88,32 @@ function showGallery(roomType) {
             break;
         case 'first':
             switch(roomType) {
-                case 'bedroom':
+                case 'bedroom1':
                     imagePaths = [
                         'first room1.jpg',
+                        'first room1().jpg'
+                    ];
+                    break;
+                case 'bedroom2':
+                    imagePaths = [
                         'first room2.jpg',
-                        'first room3.jpg',
+                        'first room2().jpg',
+                        'first room2(1).jpg'
+                    ];
+                    break;
+                case 'bedroom3':
+                    imagePaths = ['first room3.jpg'];
+                    break;
+                case 'bedroom4':
+                    imagePaths = [
                         'first room4.jpg',
-                        'first room5.jpg'
+                        'first room4().jpg'
+                    ];
+                    break;
+                case 'bedroom5':
+                    imagePaths = [
+                        'first room5.jpg',
+                        'first room5().jpg'
                     ];
                     break;
                 case 'bathroom':
@@ -101,27 +123,24 @@ function showGallery(roomType) {
                         'first bathroom (2).jpg'
                     ];
                     break;
-                case 'other':
-                    imagePaths = ['first room1().jpg'];
-                    break;
             }
             break;
         case 'second':
             switch(roomType) {
-                case 'bedroom':
+                case 'bedroom1':
                     imagePaths = [
                         'second bedroom1.jpg',
-                        'second bedroom2.jpg'
+                        'second bedroom1(1).jpg'
                     ];
+                    break;
+                case 'bedroom2':
+                    imagePaths = ['second bedroom2.jpg'];
                     break;
                 case 'bathroom':
                     imagePaths = [
                         'second bathroom.jpg',
                         'second bathroom(1).jpg'
                     ];
-                    break;
-                case 'other':
-                    imagePaths = ['second bedroom1(1).jpg'];
                     break;
             }
             break;
@@ -136,9 +155,6 @@ function showGallery(roomType) {
                     break;
                 case 'bathroom':
                     imagePaths = ['basement bathroom.jpg'];
-                    break;
-                case 'other':
-                    imagePaths = ['basement room(1).jpg'];
                     break;
             }
             break;
