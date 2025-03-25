@@ -16,40 +16,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Form submission handler
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Contact form submission
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                checkIn: document.getElementById('check-in').value,
+                checkOut: document.getElementById('check-out').value,
+                message: document.getElementById('message').value
+            };
 
-        // Basic form validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const message = document.getElementById('message').value.trim();
+            // Here you would typically send this to your server
+            // For now, we'll just create a formatted email body
+            const emailBody = `
+                New Booking Inquiry:
+                
+                Name: ${formData.name}
+                Email: ${formData.email}
+                Phone: ${formData.phone}
+                Check-in Date: ${formData.checkIn}
+                Check-out Date: ${formData.checkOut}
+                Message: ${formData.message}
+            `;
 
-        if (!name || !email || !phone || !message) {
-            alert('Please fill in all required fields');
-            return;
-        }
+            // Create mailto link with multiple recipients
+            const mailtoLink = `mailto:ariane.dresp@freent.de,weberjoachim@me.com,constiweber@icloud.com?subject=New Booking Inquiry&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
 
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-        }
-
-        // Phone validation (basic)
-        const phoneRegex = /^\+?[\d\s-]{10,}$/;
-        if (!phoneRegex.test(phone)) {
-            alert('Please enter a valid phone number');
-            return;
-        }
-
-        // Here you would typically send the form data to your server
-        // For now, we'll just show a success message
-        alert('Thank you for your inquiry! We will get back to you soon.');
-        form.reset();
-    });
+            // Clear form
+            form.reset();
+        });
+    }
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
