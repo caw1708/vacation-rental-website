@@ -6,13 +6,13 @@
     <title>Basement Floor - Summer Luxury Rental</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="floor-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">Summer Luxury Rental</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Back to Home</a></li>
         </ul>
     </nav>
 
@@ -22,17 +22,21 @@
             <p>Explore the comfortable basement living space</p>
         </header>
 
-        <section class="room-selection">
+        <div class="room-selection">
             <div class="room-card" onclick="showGallery('bedroom')">
                 <img src="images/basement/basement room.jpg" alt="Basement Bedroom">
-                <h3>Bedroom</h3>
-                <p>Spacious basement bedroom with comfortable furnishings</p>
+                <div class="room-info">
+                    <h3>Bedroom</h3>
+                    <p>Spacious basement bedroom with comfortable furnishings</p>
+                </div>
             </div>
 
             <div class="room-card" onclick="showGallery('bathroom')">
                 <img src="images/basement/basement bathroom.jpg" alt="Basement Bathroom">
-                <h3>Bathroom</h3>
-                <p>Full bathroom with modern fixtures</p>
+                <div class="room-info">
+                    <h3>Bathroom</h3>
+                    <p>Full bathroom with modern fixtures</p>
+                </div>
             </div>
 
             <div class="room-card" onclick="showGallery('other')">
@@ -40,14 +44,16 @@
                 <h3>Additional Views</h3>
                 <p>More views of the basement area</p>
             </div>
-        </section>
-    </div>
+        </div>
 
-    <!-- Gallery Modal -->
-    <div id="gallery-modal" class="modal">
-        <span class="close-modal">&times;</span>
-        <h2 id="gallery-title">Gallery</h2>
-        <div id="gallery-grid" class="gallery-grid"></div>
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <h2 id="gallery-title"></h2>
+                <div class="gallery-grid" id="gallery-grid"></div>
+            </div>
+        </div>
     </div>
 
     <script src="floor-script.js"></script>
