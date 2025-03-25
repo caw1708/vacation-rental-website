@@ -90,40 +90,17 @@ body {
 
 /* Gallery Section */
 .gallery {
-    padding: 5rem 5% 2rem;
+    padding: 2rem 5% 2rem;
     background-color: #f9f9f9;
-    min-height: 100vh;
+    min-height: 50vh;
     margin-top: 60px; /* Account for fixed navbar */
 }
 
 .gallery h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: #2c3e50;
     font-size: 2.5rem;
-    padding-top: 2rem;
-}
-
-/* Main Image */
-.main-image-container {
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
-    margin: 0 auto 4rem;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.main-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.main-image-container:hover img {
-    transform: scale(1.02);
 }
 
 /* Floor Selection */
@@ -132,7 +109,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 0 1rem;
 }
 
