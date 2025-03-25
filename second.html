@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Floor - Summer Luxury Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="floor-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Summer Luxury Rental</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Back to Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="floor-page">
+        <header class="floor-header">
+            <h1>Second Floor</h1>
+            <p>Discover our cozy bedrooms and amenities</p>
+        </header>
+
+        <div class="room-selection">
+            <div class="room-card" onclick="showGallery('bedroom1')">
+                <img src="images/second/second bedroom1.jpg" alt="First Bedroom">
+                <div class="room-info">
+                    <h3>First Bedroom</h3>
+                    <p>Spacious bedroom with modern furnishings</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('bedroom2')">
+                <img src="images/second/second bedroom2.jpg" alt="Second Bedroom">
+                <div class="room-info">
+                    <h3>Second Bedroom</h3>
+                    <p>Comfortable guest bedroom</p>
+                </div>
+            </div>
+
+            <div class="room-card" onclick="showGallery('bathroom')">
+                <img src="images/second/second bathroom.jpg" alt="Bathroom">
+                <div class="room-info">
+                    <h3>Bathroom</h3>
+                    <p>Modern bathroom with full amenities</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div id="gallery-modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+                <h2 id="gallery-title"></h2>
+                <div class="gallery-grid" id="gallery-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="floor-script.js"></script>
+</body>
+</html> 
