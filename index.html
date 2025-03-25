@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Vacation Rental</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Luxury Rental</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#details">Details</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Your Dream Vacation Home</h1>
+            <p>Experience luxury and comfort in our beautiful rental property</p>
+            <a href="#contact" class="cta-button">Book Now</a>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Add your images here -->
+            <div class="gallery-item">
+                <img src="images/placeholder1.jpg" alt="House exterior">
+            </div>
+            <div class="gallery-item">
+                <img src="images/placeholder2.jpg" alt="Living room">
+            </div>
+            <div class="gallery-item">
+                <img src="images/placeholder3.jpg" alt="Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="images/placeholder4.jpg" alt="Bedroom">
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="details">
+        <h2>Property Details</h2>
+        <div class="details-content">
+            <div class="detail-item">
+                <i class="fas fa-bed"></i>
+                <h3>Bedrooms</h3>
+                <p>3 spacious bedrooms</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-bath"></i>
+                <h3>Bathrooms</h3>
+                <p>2 modern bathrooms</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-ruler-combined"></i>
+                <h3>Square Footage</h3>
+                <p>2,500 sq ft</p>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-car"></i>
+                <h3>Parking</h3>
+                <p>2 car garage</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="amenities">
+        <h2>Amenities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-item">
+                <i class="fas fa-wifi"></i>
+                <p>High-Speed WiFi</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-swimming-pool"></i>
+                <p>Swimming Pool</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-tv"></i>
+                <p>Smart TV</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-utensils"></i>
+                <p>Fully Equipped Kitchen</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-air-conditioner"></i>
+                <p>Central Air Conditioning</p>
+            </div>
+            <div class="amenity-item">
+                <i class="fas fa-washer"></i>
+                <p>Laundry Room</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact & Inquiries</h2>
+        <div class="contact-container">
+            <form id="inquiry-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required placeholder="Your Phone">
+                </div>
+                <div class="form-group">
+                    <input type="date" id="check-in" name="check-in" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="check-out" name="check-out" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@luxuryrental.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Luxury Rental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
