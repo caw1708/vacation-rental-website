@@ -412,18 +412,29 @@ body {
     gap: 1.5rem;
 }
 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 0.9rem;
+}
+
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 1rem;
+    padding: 0.8rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
     font-size: 1rem;
 }
 
-.form-group textarea {
-    height: 150px;
-    resize: vertical;
+.form-group input[type="date"] {
+    color: #666;
+    font-family: inherit;
 }
 
 .submit-button {
